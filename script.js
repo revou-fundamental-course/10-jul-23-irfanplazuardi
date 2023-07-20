@@ -5,9 +5,9 @@ document.getElementById("calculate").addEventListener("click", function() {
     var reset = document.getElementById("reset");
 
     if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
-        result.textContent = "Harap masukan valid data tinggi badan, usia dan berat badan";
+        result.textContent = "Harap masukan valid data tinggi badan, usia dan berat badan"; //output jika data tidak diisi
     } else {
-        var bmi = (weight / Math.pow(height / 100, 2)).toFixed(1);
+        var bmi = (weight / Math.pow(height / 100, 2)).toFixed(1); //apply rumus BMI
         result.textContent = "Anda memiliki berat badan" + 
         " " +  bmi;
         if (bmi < 18.5) {
@@ -21,7 +21,8 @@ document.getElementById("calculate").addEventListener("click", function() {
         }
     }
 
-    reset.addEventListener("click", function(){
+    // action jika click reset button
+    reset.addEventListener("click", function(){ 
         resetPageState()
     })
     function resetPageState(){
